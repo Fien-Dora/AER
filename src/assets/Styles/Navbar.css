@@ -1,0 +1,16 @@
+.navBg{
+  background: #FFFF;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  z-index: 100;
+  
+}
+.print{
+  border-radius: 20px;
+  padding: 5px;
+}
+.navStyle{
+  height: 50px;
+  margin-bottom: 10px;
+}

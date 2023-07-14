@@ -1,0 +1,50 @@
+.form_container{
+  width: 55%;
+}
+.LoginBG{
+  background: #F0F2F5;
+}
+.logoText{
+  font-size: 40px;
+  font-weight: 700;
+}
+.App-logo{
+  border-radius: 5px;
+  height: 75%;
+  width: 100%;
+}
+.login{
+  display: flex;
+  flex-direction: column;;
+}
+form{
+  background: #FFFFFF
+}
+p a{
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .form_container{
+    width: 60%;
+  }
+  .App-logo{
+    height: 70%;
+    width: 60%;
+  }
+}
+@media screen and  (max-width: 700px) {
+  .form_container{
+    width:80%;
+  }
+  
+}
+@media screen and  (max-width: 500px) {
+  .form_container{
+    width:100%;
+  }
+  .App-logo{
+    height: 70%;
+    width: 60%;
+  }
+}
