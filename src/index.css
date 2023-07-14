@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #F0F2F5;
+  background-color: hsl(0deg 0% 98.04%);
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.responsiveTable{
+  overflow-x:  auto;
+  max-width: 100%;
+}
+.responsiveTable Table{
+  width: max-content;
 }

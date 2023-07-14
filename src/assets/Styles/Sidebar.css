@@ -1,0 +1,58 @@
+:root{
+  --body: hsl(0deg 0% 98.04%);
+  --grayBackground: #efefef;
+  
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--body);
+}
+.list-group{
+  border: none;
+}
+.list-group a:hover{
+  transition: 0.2s;
+  color: rgba(0, 81, 255, 0.911);
+  font-weight: 200;
+  cursor: pointer;
+}
+.sidebar{
+  height: 100vh;
+  position: fixed;
+  width: 17%;
+}
+
+.siderLogo{
+  height: 100%;
+  width: 100%;
+}
+
+
+/* search bar */
+.search-box{
+  background: var(--grayBackground);
+  width: 90%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+
+}
+.search-box  input{
+  border: none;
+  outline: none;
+  height: 90%;
+  width: 85%;
+  background: transparent;
+  padding: 5px 5px;
+  font-size: 15px;
+}
+.search-box img{
+  width: 1em;
+  cursor: pointer;
+}
