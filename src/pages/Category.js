@@ -1,6 +1,7 @@
 import NavigationBar from "..//components/NavigationBar.js";
 import Sidebar from "../components/Sidebar.js";
-import MaintainCard from "../components/MaintainCard.js";
+// import MaintainCard from "../components/MaintainCard.js";
+import MaintainCard from "../components/testCategory.js";
 
 const Category = () => {
   return ( 
@@ -14,6 +15,7 @@ const Category = () => {
             <NavigationBar/>
 
             <MaintainCard/>
+            {/* <CatFetch/> */}
           </div>
         </div>
       </div>

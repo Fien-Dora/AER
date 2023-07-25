@@ -4,7 +4,7 @@ import airConditioner from "../assets/img/airConditioner.jpg";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import '../Styles/card.css';
+import '..//assets/Styles/card.css';
 
 const MaintainCard = () => {
   return (
