@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import '..//assets/Styles/card.css';
-import '..//data/category/category.json';
+import '../data/category/category.json';
+import images from "../utils/images";
 // import { useEffect, useState } from 'react';
 
 
@@ -23,7 +24,7 @@ const MaintainCard = ({ categories }) => {
         {categories.map((category => (
         <Col key={category.id}>
           <Card style={{ width: "13rem" }} className="p-0 mx-0 my-2 custom-card">
-            <Card.Img variant="top" src={category.image} style={{ height: "6rem" }} />
+            <Card.Img variant="top" src={images[category.image]} style={{ height: "6rem" }} />
             <Card.Body className="py-1 category-card">
               <Card.Title className="p-0 m-0">{category.name}</Card.Title>
               <Card.Text className="p-0 m-0">

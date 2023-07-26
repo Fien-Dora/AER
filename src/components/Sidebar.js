@@ -1,9 +1,11 @@
+import { Outlet } from 'react-router-dom';
 import '..//assets/Styles/Sidebar.css'
 import search from '../assets/img/search.png'
 
 const Sidebar = () => {
   return ( 
-    <div className="bg-white sidebar p-2 m-0">
+    <>
+      <div className="bg-white sidebar p-2 m-0">
       <div className="row g-0 m-0 p-1 justify-content-center">
         <div className="col-4 ">
           <img src="/logo.jpg" alt="logoFromPublic" 
@@ -60,6 +62,8 @@ const Sidebar = () => {
         </a>
       </div>
     </div>
+    <Outlet />
+    </>
    );
 }
  

@@ -3,19 +3,19 @@
     {
     "id": 1,
     "name": "Production",
-    "image": "..//assets/img/production.jpg",
+    "image": "production",
     "description": "Installation and initial power"
     },
     {
       "id": 2,
       "name": "storage",
-      "image": "src/assets/img/storage.jpg",
+      "image": "storage",
       "description": "Installation and initial power"
     },
     {
       "id": 3,
       "name": "Equipments",
-      "image": "src/assets/img/equipments.jpeg",
+      "image": "equipments",
       "description": "Installation and initial power"
     }
   ]
