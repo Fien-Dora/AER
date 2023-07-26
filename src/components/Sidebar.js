@@ -1,16 +1,18 @@
-import '../Styles/Sidebar.css'
+import { Outlet } from 'react-router-dom';
+import '..//assets/Styles/Sidebar.css'
 import search from '../assets/img/search.png'
 
 const Sidebar = () => {
   return ( 
-    <div className="bg-white sidebar p-2 m-0">
+    <>
+      <div className="bg-white sidebar p-2 m-0">
       <div className="row g-0 m-0 p-1 justify-content-center">
         <div className="col-4 ">
           <img src="/logo.jpg" alt="logoFromPublic" 
           className='siderLogo'/>
         </div>
         <div className="col-8">
-          <spand 
+          <span 
             className="brand-name fs-5">
             <strong>
               <span className="text-success">A</span>
@@ -18,7 +20,7 @@ const Sidebar = () => {
               <span className="text-warning">R</span> 
             </strong> Data
             <div className='fs-6'>  Management</div>
-          </spand>
+          </span>
         </div>
       </div>
 
@@ -35,7 +37,7 @@ const Sidebar = () => {
 
       <div className="list-group list-group-flush">
         <a href="/" className="list-group-item py-1 border-0">
-          <i class="bi bi-speedometer2 fs-6 me-2 text-success"></i>
+          <i className="bi bi-speedometer2 fs-6 me-2 text-success"></i>
           <span className="fs-5">Dashboard</span>
         </a>
         <a href="/" className="list-group-item py-1 border-0">
@@ -60,6 +62,8 @@ const Sidebar = () => {
         </a>
       </div>
     </div>
+    <Outlet />
+    </>
    );
 }
  

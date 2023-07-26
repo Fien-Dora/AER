@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import '../Styles/summary.css'
+import '..//assets/Styles/summary.css'
 
 
 function Summary() {

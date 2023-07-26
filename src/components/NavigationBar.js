@@ -1,6 +1,7 @@
 import { Navbar} from 'react-bootstrap';
-import '../Styles/Navbar.css'
+import '..//assets/Styles/Navbar.css'
 import Button from 'react-bootstrap/Button';
+import { Outlet } from 'react-router-dom';
 // import React, { useState } from 'react';
 // import DatePicker from 'react-datepicker';
 
@@ -14,7 +15,8 @@ import Button from 'react-bootstrap/Button';
 
 const NavigationBar = () => {
   return (
-    <div className="navStyle">
+    <>
+      <div className="navStyle">
       <Navbar expand="lg" className='p-2 g-0 navBg' >
         <Navbar.Brand className='ms-4' href="#">Maintainance</Navbar.Brand>
         
@@ -24,12 +26,14 @@ const NavigationBar = () => {
 
         <div className="ms-5">
           <Button variant="success" className='print px-3'>
-            <i class="bi bi-printer pe-2"></i>
+            <i className="bi bi-printer pe-2"></i>
             <i>print report</i>
           </Button>
         </div>      
       </Navbar>
     </div>
+    <Outlet />
+    </>
   );
 };
 

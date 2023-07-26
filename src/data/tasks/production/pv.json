@@ -1,0 +1,22 @@
+{
+  "category": [
+    {
+    "id": 1,
+    "image": "src/assets/img/production.jpg",
+    "name": "Production",
+    "description": "Installation and initial power"
+    },
+    {
+      "id": 2,
+      "image": "src/assets/img/distribution 2.webp",
+      "name": "storage",
+      "description": "Installation and initial power"
+    },
+    {
+      "id": 3,
+      "image": "src/assets/img/distribution 2.webp",
+      "name": "storage",
+      "description": "Installation and initial power"
+    }
+  ]
+}

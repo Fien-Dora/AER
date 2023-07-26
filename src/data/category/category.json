@@ -1,0 +1,22 @@
+{
+  "categories": [
+    {
+    "id": 1,
+    "name": "Production",
+    "image": "production",
+    "description": "Installation and initial power"
+    },
+    {
+      "id": 2,
+      "name": "storage",
+      "image": "storage",
+      "description": "Installation and initial power"
+    },
+    {
+      "id": 3,
+      "name": "Equipments",
+      "image": "equipments",
+      "description": "Installation and initial power"
+    }
+  ]
+}
