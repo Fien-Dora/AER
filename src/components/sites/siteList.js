@@ -8,7 +8,6 @@ const SiteList = ({ zones }) => {
   return (
     <>
       <ActionBar />
-
       {/* Card consisting ot table */}
       <Card className="mx-4 my-2">
         <Card.Body>
@@ -45,7 +44,7 @@ const SiteList = ({ zones }) => {
               </thead>
               <tbody>
                 {/* Dynamic Rendering */}
-                {zones.map((zone) => {
+                {zones.map((zone => (
                   <tr key={zone.id}>
                     <td className="p-1 px-2 align-content-center">{zone.id}</td>
 
@@ -68,7 +67,7 @@ const SiteList = ({ zones }) => {
                     <td className="p-1">0</td>
                     <td className="p-1">300</td>
                     <td className="p-1">
-                      Pc = 270W, Model = SINGYES solar (Hunan)
+                      Pc = 270W, Model = SINGYES solar
                     </td>
                     <td className="p-1">null</td>
                     <td className="p-1">
@@ -82,8 +81,8 @@ const SiteList = ({ zones }) => {
                     <td className="p-1">1 Extracteur, 2 Climatiseurs</td>
                     <td className="p-1">En Marche</td>
                     <td className="p-1">RAS</td>
-                  </tr>;
-                })}
+                  </tr>
+                )))}
               </tbody>
             </Table>
           </div>

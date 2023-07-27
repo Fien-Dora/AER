@@ -1,5 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import search from '../../assets/img/search.png'
 
 const SiteActionBar = () => {
   return (
@@ -15,7 +17,6 @@ const SiteActionBar = () => {
         <Col lg="2">
           <Form.Select aria-label="Default select example" className="sort-by">
             <option>
-              <i class="bi bi-sort-alpha-down"></i>
               Sortby
             </option>
             <option value="name">name</option>
