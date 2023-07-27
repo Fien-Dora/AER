@@ -27,8 +27,8 @@
     {
       "id": 5,
       "name": "Transforamation",
-      "image": "http://127.0.0.1:8007/transformation.webp",
-      "description": "Energy transformation store, controllers, tranformater"
+      "image": "transformation",
+      "description": "Energy transformation store and controllers"
     },
     {
       "id": 6,

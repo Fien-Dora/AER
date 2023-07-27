@@ -6,6 +6,7 @@ const equipments = require('../assets/img/equipments.jpeg');
 const production = require('../assets/img/production.jpg');
 const search = require('../assets/img/search.png');
 const storage = require('../assets/img/storage.jpg');
+const transformation = require('../assets/img/transformation.webp');
 
 export default {
     airConditioner,
@@ -15,5 +16,6 @@ export default {
     equipments,
     production,
     search,
-    storage
+    storage,
+    transformation
 }
