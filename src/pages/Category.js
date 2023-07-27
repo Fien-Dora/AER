@@ -1,8 +1,7 @@
 import MaintainCard from "../components/testCategory.js";
 import useFetch from "../hooks/useFetch.js";
-
 const Category = () => {
-  const {data: categories, isLoading, error } = useFetch("http://localhost:8000/categories");
+  const {data: categories, isLoading, error } = useFetch("http://localhost:8005/categories");
   return ( 
     <>
       <div className="container-fluid min-vh-100 background: #F0F2F5 ">

@@ -1,0 +1,118 @@
+{
+  "Batteries": [
+      {
+        "id": 1,
+        "name": "isoler les batteries à risque",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "name": "inspection visuelle",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "name": "mesurer les tensions",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+     {
+        "id": 4,
+        "name": "verifier les serrages",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+     {
+        "id": 5,
+        "name": "isoler les batteries à risque",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      }
+    ],
+  "BatteriesEndomagées": [
+      {
+        "id": 1,
+        "name": "bas",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "name": "moyen",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "name": "elevé",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+     {
+        "id": 4,
+        "name": "à risque",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      }
+    ],
+  "CabineDeBatteries": [
+      {
+        "id": 1,
+        "name": "cabine de batterie en arret",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "name": "cabine de batterie en fonctionnement",
+        "quantity": 0,
+        "progress": 0,
+        "progressDescription": "",
+        "status": "",
+        "observations": "No observations",
+        "completed": false
+      }
+    ]
+  }

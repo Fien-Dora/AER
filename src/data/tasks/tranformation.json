@@ -1,0 +1,44 @@
+{
+  "Controleur": [
+    {
+      "id": 1,
+      "name": "HSU endommagé",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "PV module switch off",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "disjoncteur AC endommagé",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "name": "afficheur hors service",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    }
+  ]
+}

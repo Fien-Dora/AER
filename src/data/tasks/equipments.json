@@ -1,0 +1,193 @@
+{
+  "SystèmeElectrique": [
+    {
+      "id": 1,
+      "name": "remplacer les disjoncteur",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "mesurer les tensions",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "essais electrique",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    }
+  ],
+  "DetecteurDeFumee ": [
+    {
+      "id": 1,
+      "name": "remplacer les detecteur",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "inspection visuelle",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },	
+     {
+      "id": 3,
+      "name": "inspection visuelle",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    }
+],
+"Lamps ": [
+  {
+    "id": 1,
+    "name": "remplacer les lampes",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "name": "inspection visuelle",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  }
+],
+"Extracteurs": [
+  {
+    "id": 1,
+    "name": "remplacer les moteur",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "name": "remplacer l'helice",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "name": "remplacer les condo",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "name": "tester la sonde",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  }
+],
+"Climatiseur": [
+  {
+    "id": 1,
+    "name": "recharger le fluide",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "name": "Vérification de l’évaporateur",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "name": "vérification du détendeur",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "name": "vérification des fuites",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "name": "vérification du condenseur",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  },
+  {
+    "id": 6,
+    "name": "vérification du comprehenseur ",
+    "quantity": 0,
+    "progress": 0,
+    "progressDescription": "",
+    "status": "",
+    "observations": "No observations",
+    "completed": false
+  }
+]
+
+}
