@@ -10,13 +10,31 @@
       "id": 2,
       "name": "storage",
       "image": "storage",
-      "description": "Installation and initial power"
+      "description": "Power storage mediums and batteries"
     },
     {
       "id": 3,
       "name": "Equipments",
       "image": "equipments",
-      "description": "Installation and initial power"
+      "description": "Power equipments and stand by devices"
+    },
+    {
+      "id": 4,
+      "name": "Distribution",
+      "image": "distribution2",
+      "description": "Power distribution, poles cables etc"
+    },
+    {
+      "id": 5,
+      "name": "Transforamation",
+      "image": "http://127.0.0.1:8007/transformation.webp",
+      "description": "Energy transformation store, controllers, tranformater"
+    },
+    {
+      "id": 6,
+      "name": "Consupmtion",
+      "image": "consumption",
+      "description": "Meters and consumer maintenance"
     }
   ]
 }
