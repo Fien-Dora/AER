@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Maintain from "./pages/Maintain";
 import ErrorPage from "./pages/ErrorPage";
+import ZonesPage from "./pages/ZonesPage";
 
 export const routes = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ export const routes = createBrowserRouter([
         element: <NavigationBar />,
         children: [
           {
-            path: "home",
+            path: "",
             element: <Home />,
           },
 
@@ -35,6 +36,11 @@ export const routes = createBrowserRouter([
             path: "maintain",
             element: <Maintain />,
           },
+
+          {
+            path: "zone/:id",
+            element: <ZonesPage />
+          }
         ],
       },
     ],

@@ -22,3 +22,18 @@ code {
 .responsiveTable Table{
   width: max-content;
 }
+
+a.active {
+  background-color: #2a682d !important;
+  font-weight: bold !important;
+}
+
+a.sideBar-link:hover {
+  background-color: transparent !important;
+  color: #2a682d !important;
+  font-weight: bold !important;
+}
+
+a.sideBar-link:hover .bi{
+  font-size: 20px !important;
+}
