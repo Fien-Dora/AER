@@ -8,7 +8,7 @@ import SiteList from './siteList';
 
 
 function Statistics() {
-  const {data: zones, isLoading, error } = useFetch("http://localhost:8004/zone1");
+  const {data: zones, isLoading, error } = useFetch("http://localhost:8000/zones");
   return (
     <>
       <div className="container-fluid min-vh-100 background: #F0F2F5 ">

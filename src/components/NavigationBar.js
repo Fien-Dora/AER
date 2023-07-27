@@ -3,6 +3,7 @@ import "..//assets/Styles/Navbar.css";
 import Button from "react-bootstrap/Button";
 import { Outlet } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
+import { useState } from "react";
 // import React, { useState } from 'react';
 // import DatePicker from 'react-datepicker';
 
@@ -15,6 +16,8 @@ import Stack from "react-bootstrap/Stack";
 // };
 
 const NavigationBar = () => {
+const [language, setLanguage] = useState("English");
+
   return (
     <>
       <div className="navStyle">
@@ -28,6 +31,22 @@ const NavigationBar = () => {
                 <i className="bi bi-printer pe-2"></i>
                 <i>print report</i>
               </Button>
+            </div>
+            <div className="d-flex">
+              <p className="mt-2">Lang:</p>
+              <div className="dropdown-center">
+                <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {language}
+                </button>
+                <ul className="dropdown-menu">
+                  <li><button className="btn" onClick={() => setLanguage("English")}>English</button></li>
+                  <li><button className="btn" onClick={() => setLanguage("French")}>French</button></li>
+                </ul>
+              </div>
+            </div>
+            <div className="d-flex align-items-baseline">
+              <div><p className="fs-5 fw-bold">Fien Dora</p></div>
+              <i className="bi bi-person-fill fs-1"></i>
             </div>
           </Stack>
         </Navbar>
