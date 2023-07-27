@@ -6,7 +6,14 @@ import Todo from "../components/Todo.js";
 const Maintain = () => {
   return (
     <>
-      <Todo />
+      <Container fluid className="min-vh-100 background: #F0F2F5 ">
+        <Row>
+          <Col className="col-2 g-0 "></Col>
+          <Col>
+            <Todo />
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };
