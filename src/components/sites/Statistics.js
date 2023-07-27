@@ -1,8 +1,15 @@
-import MaintainCard from "../components/testCategory.js";
-import useFetch from "../hooks/useFetch.js";
-const Category = () => {
-  const {data: categories, isLoading, error } = useFetch("http://localhost:8000/categories");
-  return ( 
+
+import '../../assets/Styles/Statistics.css';
+import '../../index.css'
+import useFetch from "../../hooks/useFetch";
+import SiteList from './siteList';
+
+
+
+
+function Statistics() {
+  const {data: zones, isLoading, error } = useFetch("http://localhost:8000/zones");
+  return (
     <>
       <div className="container-fluid min-vh-100 background: #F0F2F5 ">
         <div className="row">
@@ -11,12 +18,12 @@ const Category = () => {
           <div className="col-10 p-0 m-0 g-0 right">
             {isLoading && <p className="text-primary text-center">Loading...</p>}
             {error && <p className="text-primary text-center">{error}</p>}
-            {categories && <MaintainCard categories={categories} />}
+            {zones && <SiteList zones={zones} />}
           </div>
         </div>
       </div>
     </>
-   );
+  );
 }
 
-export default Category;
+export default Statistics;

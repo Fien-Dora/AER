@@ -1,0 +1,159 @@
+{
+  "pvs": [
+    {
+      "id": 1,
+      "name": "Nettoyage PV",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "mesurer les tensions",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "inspection visuelle",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+   {
+      "id": 4,
+      "name": "Vérifier les vis desserrées",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+   {
+      "id": 5,
+      "name": "Verification de l’encrassement des panneaux",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+   {
+      "id": 6,
+      "name": "Vérifier la présence d’un point chaud",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    }
+  ],
+  "cassés": [
+    {
+      "id": 1,
+      "name": "remplacer les PV cassés",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "isoler les PV endommagés",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "verification des fissures legeres",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+   
+   {
+      "id": 6,
+      "name": "Vérifier la présence d’un point chaud",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    }
+  ],
+  "junctionBox": [
+    {
+      "id": 1,
+      "name": "inspection visuelle",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "mesurer les tensions",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "remplacer les fusibles",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+   {
+      "id": 4,
+      "name": "remplacer les parafoudres",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    },
+   {
+      "id": 5,
+      "name": "remplacer le disjoncteur",
+      "quantity": 0,
+      "progress": 0,
+      "progressDescription": "",
+      "status": "",
+      "observations": "No observations",
+      "completed": false
+    }
+  ]
+}
