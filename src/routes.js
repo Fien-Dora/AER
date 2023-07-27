@@ -7,42 +7,41 @@ import Login from "./pages/Login";
 import Maintain from "./pages/Maintain";
 import ErrorPage from "./pages/ErrorPage";
 
-
 export const routes = createBrowserRouter([
-    {
-        path: "/login",
-        element: <Login />,
-    },
+  {
+    path: "/login",
+    element: <Login />,
+  },
 
-    {
+  {
+    path: "",
+    element: <Sidebar />,
+    children: [
+      {
         path: "/",
         element: <NavigationBar />,
         children: [
-            {
-                path: "",
-                element: <Sidebar />,
-                children: [
-                    {
-                        path: "",
-                        element: <Home />
-                    },
+          {
+            path: "home",
+            element: <Home />,
+          },
 
-                    {
-                        path: "category",
-                        element: <Category />
-                    },
+          {
+            path: "category",
+            element: <Category />,
+          },
 
-                    {
-                        path: "maintain",
-                        element: <Maintain />
-                    }
-                ]
-            }
-        ]
-    },
+          {
+            path: "maintain",
+            element: <Maintain />,
+          },
+        ],
+      },
+    ],
+  },
 
-    {
-        path: '/*',
-        element: <ErrorPage />
-    }
-])
+  {
+    path: "/*",
+    element: <ErrorPage />,
+  },
+]);

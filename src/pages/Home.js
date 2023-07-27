@@ -1,7 +1,5 @@
-import NavigationBar from "../components/NavigationBar.js";
 import Summary from "../components/summary.js";
 import Statistics from "../components/sites/Statistics.js";
-import Sidebar from "../components/Sidebar.js";
 
 
 const Home = () => {
