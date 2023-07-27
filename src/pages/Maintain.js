@@ -1,21 +1,21 @@
-import NavigationBar from "../components/NavigationBar.js";
-import Sidebar from "../components/Sidebar.js";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import Todo from "../components/Todo.js";
 
 const Maintain = () => {
-  return ( 
+  return (
     <>
-      <div className="container-fluid min-vh-100 background: #F0F2F5 ">
-        <div className="row">
-          <div className="col-2 g-0 ">
-          </div>
-          <div className="col-10 p-0 m-0 g-0 right">
-            <Todo/>
-          </div>
-        </div>
-      </div>
+      <Container fluid className="min-vh-100 background: #F0F2F5 ">
+        <Row>
+          <Col className="col-2 g-0 "></Col>
+          <Col>
+            <Todo />
+          </Col>
+        </Row>
+      </Container>
     </>
-   );
-}
- 
+  );
+};
+
 export default Maintain;
