@@ -1,3 +1,7 @@
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
+
 const ActionField = () => {
   return (
     <>
@@ -17,7 +21,7 @@ const ActionField = () => {
         {/* Maintainace */}
         <Col>
           <Link to="/Category" className="list-group-item border-0">
-            <i class="bi bi-gear-fill"></i>
+            <i className="bi bi-gear-fill"></i>
           </Link>
         </Col>
       </Row>
