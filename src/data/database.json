@@ -41,7 +41,8 @@
   "equipments": [
     {
       "id": 1,
-      "typeName": "SystèmeElectrique",
+      "typeName" : [
+        {
       "data": [
         {
           "id": 1,
@@ -182,6 +183,8 @@
           "completed": false
         }
       ]
+    }
+  ]
     },
     {
       "id": 5,
