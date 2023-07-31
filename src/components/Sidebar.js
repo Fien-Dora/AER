@@ -40,8 +40,7 @@ const Sidebar = () => {
             <i className="bi bi-speedometer2 fs-6 me-2 text-success"></i>
             <span className="fs-5">Dashboard</span>
           </a>
-          <div>
-            
+          <div>       
           </div>
           <div className="dropdown-center">
             <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,16 +67,24 @@ const Sidebar = () => {
             Maintainance
           </p>
           <div className="ms-3">
-            <NavLink to="/maintain" className="list-group-item py-1 border-0 sideBar-link">Maintain Site</NavLink>
-            <NavLink to="/history" className="list-group-item py-1 border-0 sideBar-link">History</NavLink>
+            <NavLink
+              to="/maintain"
+              className="list-group-item py-1 border-0 sideBar-link"
+            >
+              Maintain Site
+            </NavLink>
+            <NavLink
+              to="/history"
+              className="list-group-item py-1 border-0 sideBar-link"
+            >
+              History
+            </NavLink>
           </div>
         </div>
       </div>
-
       <div className='overflow-auto vh-100' style={{ flexGrow: 1 }}>
         <Outlet />
       </div>
-
     </div>
   );
 };

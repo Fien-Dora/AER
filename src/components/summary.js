@@ -6,14 +6,29 @@ import '..//assets/Styles/summary.css'
 
 function Summary() {
   return (
-    <Card className='m-4 summary'>
+    <Card className='m-4 summary shadow'>
       <Card.Body>
         <Row>
-          <Col>Zone 1</Col>
-          <Col>Zone 2</Col>
-          <Col>Zone 3</Col>
-          <Col>Zone 4</Col>
-          <Col>Zone 5</Col>
+          <Col>
+            <div>5 Zones</div>
+            <div>350sites</div>
+          </Col>
+          <Col>
+            <div>GPS</div>
+            <div>1000M loc</div>
+          </Col>
+          <Col>
+            <div>Maintain</div>
+            <div>real time</div>
+          </Col>
+          <Col>
+            <div>history 2k**</div>
+            <div></div>
+          </Col>
+          <Col>
+            <div>monitoring 350</div>
+            <div>Real time</div>
+          </Col>
         </Row>
       </Card.Body>
     </Card>

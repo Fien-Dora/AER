@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Maintain from "./pages/Maintain";
 import ErrorPage from "./pages/ErrorPage";
 import ZonesPage from "./pages/ZonesPage";
+import TaskPage from "./pages/TaskPage";
 
 export const routes = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const routes = createBrowserRouter([
           {
             path: "zone/:id",
             element: <ZonesPage />
+          },
+          {
+            path: "equipments/:id",
+            element: <TaskPage />
           }
         ],
       },
