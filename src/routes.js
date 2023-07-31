@@ -10,7 +10,7 @@ import ZonesPage from "./pages/ZonesPage";
 
 export const routes = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <Login />,
   },
 
@@ -23,7 +23,7 @@ export const routes = createBrowserRouter([
         element: <NavigationBar />,
         children: [
           {
-            path: "",
+            path: "home",
             element: <Home />,
           },
 
