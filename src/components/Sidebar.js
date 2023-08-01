@@ -4,7 +4,7 @@ import search from "../assets/img/search.png";
 import useFetch from "../hooks/useFetch";
 
 const Sidebar = () => {
-  const { data: zones, isLoading, error } = useFetch("http://localhost:8000/zones");
+  const { data: zones, isLoading, error } = useFetch("http://localhost:8006/zones");
 
   return (
     <div className="d-flex justify-content-between">
@@ -44,7 +44,7 @@ const Sidebar = () => {
           </div>
           <div className="dropdown-center">
             <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span className="mt-3 ms-1 fs-5 fw-bold">
+            <span className="mt-3 ms-1 fs-6 fw-bold">
               <i className="bi bi-house-door fs-5 me-2"></i>
               Zones
             </span>
@@ -62,7 +62,7 @@ const Sidebar = () => {
               }
             </ul>
           </div>
-          <p className="mt-3 ms-1 fs-4 fw-bold">
+          <p className="mt-3 ms-1 fs-6 fw-bold me-5">
             <i className="bi bi-settings fs-3 me-2"></i>
             Maintainance
           </p>
