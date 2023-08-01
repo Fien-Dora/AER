@@ -1,56 +1,92 @@
 import React, { useEffect, useState } from "react";
 import { Container, Table, Form, Button, Row, Col } from "react-bootstrap";
-import { PDFDownloadLink, Page, Text, View, Document } from '@react-pdf/renderer';
+import {
+  PDFDownloadLink,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  Document,
+} from "@react-pdf/renderer";
 import "../index.css";
 import MaintenanceHeader from "./MaintenanceHeader";
 import Stack from "react-bootstrap/Stack";
 import TaskSummaryList from "../components/TaskPageComponents/TaskSumaryList";
 
+// Document styles
+const styles = StyleSheet.create({
+  page: {
+    padding: "1cm",
+  },
+  table: {
+    display: "table",
+    width: "100%",
+    // borderStyle: 'solid',
+    // borderWidth: 1,
+    // borderColor: '#000',
+  },
+  tableRow: {
+    margin: "auto",
+    flexDirection: "row",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "#000",
+  },
+  tableCell: {
+    width: "15%",
+    borderRight: "1px solid #000",
+    padding: "5px",
+    fontSize: "10px",
+  },
+  idCell: {
+    width: "5%",
+    borderRight: "1px solid #000",
+    padding: "5px",
+    fontSize: "10px",
+  },
+  medCell: {
+    width: "10%",
+    borderRight: "1px solid #000",
+    padding: "5px",
+    fontSize: "10px",
+  },
+});
+
 const MyDocument = ({ completedTasks }) => (
   <Document>
-    <Page>
-      <View>
-        <Text>Completed Tasks:</Text>
-        <Table>
-          <thead>
-            <Text>
-              <tr>
-                <th>ID</th>
-                <th>Task Name</th>
-                <th>Quantity</th>
-                <th>Progress</th>
-                <th>Progress Description</th>
-                <th>Status</th>
-                <th>Observations</th>
-                <th>Completed</th>
-              </tr>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.table}>
+        <View style={styles.tableRow}>
+          <Text style={styles.idCell}>ID</Text>
+          <Text style={styles.tableCell}>Task Name</Text>
+          <Text style={styles.medCell}>Quantity</Text>
+          <Text style={styles.medCell}>Progress</Text>
+          <Text style={styles.tableCell}>Progress Description</Text>
+          <Text style={styles.medCell}>Status</Text>
+          <Text style={styles.tableCell}>Observations</Text>
+          <Text style={styles.tableCell}>Completed</Text>
+        </View>
+        {completedTasks.map((task) => (
+          <View key={task.id} style={styles.tableRow}>
+            <Text style={styles.idCell}>{task.id}</Text>
+            <Text style={styles.tableCell}>{task.name}</Text>
+            <Text style={styles.medCell}>{task.quantity}</Text>
+            <Text style={styles.medCell}>{`${task.progress}%`}</Text>
+            <Text style={styles.tableCell}>{task.progressDescription}</Text>
+            <Text style={styles.medCell}>{task.status}</Text>
+            <Text style={styles.tableCell}>{task.observations}</Text>
+            <Text style={styles.tableCell}>
+              {task.completed ? "Yes" : "No"}
             </Text>
-          </thead>
-          <tbody>
-            {completedTasks.map((task) => (
-              <Text key={task.id}>
-                <tr>
-                  <td>{task.id}</td>
-                  <td>{task.name}</td>
-                  <td>{task.quantity}</td>
-                  <td>{`${task.progress}%`}</td>
-                  <td>{task.progressDescription}</td>
-                  <td>{task.status}</td>
-                  <td>{task.observations}</td>
-                  <td>{task.completed ? 'Yes' : 'No'}</td>
-                </tr>
-              </Text>
-            ))}
-          </tbody>
-        </Table>
+          </View>
+        ))}
       </View>
     </Page>
   </Document>
-); 
+);
 
 const TodoApp = () => {
   const [tasks, setTasks] = useState([
-
     {
       id: 1,
       name: "recharger le fluide",
@@ -59,7 +95,7 @@ const TodoApp = () => {
       progressDescription: "Half Way done",
       status: "OK",
       observations: "No observations",
-      completed: false
+      completed: false,
     },
     {
       id: 2,
@@ -69,7 +105,7 @@ const TodoApp = () => {
       progressDescription: "",
       status: "OK",
       observations: "No observations",
-      completed: false
+      completed: false,
     },
     {
       id: 3,
@@ -79,7 +115,7 @@ const TodoApp = () => {
       progressDescription: "",
       status: "OK",
       observations: "No observations",
-      completed: false
+      completed: false,
     },
     {
       id: 4,
@@ -89,7 +125,7 @@ const TodoApp = () => {
       progressDescription: "",
       status: "NOK",
       observations: "No observations",
-      completed: false
+      completed: false,
     },
     {
       id: 5,
@@ -99,7 +135,7 @@ const TodoApp = () => {
       progressDescription: "",
       status: "OK",
       observations: "No observations",
-      completed: false
+      completed: false,
     },
     {
       id: 6,
@@ -117,7 +153,6 @@ const TodoApp = () => {
     progress: 0,
     progressDescription: "",
     observations: "",
-
   });
 
   const [editingTaskId, setEditingTaskId] = useState(null);
@@ -200,7 +235,7 @@ const TodoApp = () => {
                 {tasks.map((task) => (
                   <tr key={task.id}>
                     <td>{task.id}</td>
-                    <td>{ task.name }</td>
+                    <td>{task.name}</td>
                     <td>
                       {editingTaskId === task.id ? (
                         <Form.Control
@@ -240,7 +275,7 @@ const TodoApp = () => {
                     <td>
                       {editingTaskId === task.id ? (
                         <Form.Control
-                          type="text"
+                          type="select"
                           name="status"
                           value={newTask.status}
                           onChange={handleInputChange}
@@ -300,18 +335,20 @@ const TodoApp = () => {
         </Col>
       </Row>
 
-      {/* Print button */}
-      <Button variant="primary" onClick={handlePrintReport}>Print Completed Tasks</Button>
-
-      {/* PDF download link */}
-      {completedTasks.length > 0 && (
-        <PDFDownloadLink document={<MyDocument completedTasks={completedTasks} />} fileName="completed_tasks.pdf">
-          {({ blob, url, loading, error }) => (loading ? 'Loading...' : 'Download Completed Tasks PDF')}
-        </PDFDownloadLink>
-      )}
-
       <Stack direction="horizontal" gap={3}>
         <div className="p-2 ms-auto">
+          {/* PDF download link */}
+          {completedTasks.length > 0 && (
+            <PDFDownloadLink
+              className="me-5"
+              document={<MyDocument completedTasks={completedTasks} />}
+              fileName="completed_tasks.pdf"
+            >
+              {({ blob, url, loading, error }) =>
+                loading ? "Loading..." : "Download Completed Tasks PDF"
+              }
+            </PDFDownloadLink>
+          )}
           <Button variant="success" type="submit">
             + <i> add To Report</i>
           </Button>
