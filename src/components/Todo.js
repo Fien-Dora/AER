@@ -13,7 +13,7 @@ import "../index.css";
 import MaintenanceHeader from "./MaintenanceHeader";
 import Stack from "react-bootstrap/Stack";
 import TaskSummaryList from "../components/TaskPageComponents/TaskSumaryList";
-import DateContext from "./DateContext";
+import DateContext from "../hooks/DateContext";
 
 // Document styles
 const styles = StyleSheet.create({
@@ -56,9 +56,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 10,
   },
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
   dateSection: {
-    marginTop: 20,
+    marginTop: 5,
     fontSize: 12,
+    alignItems: "flex-end",
+    marginVertical: 10,
   },
 });
 
@@ -67,9 +74,11 @@ const MyDocument = ({ completedTasks, visitDate, nextVisitDate }) => (
     <Page size="A4" style={styles.page}>
       <View>
         <Text style={styles.heading}>Completed Tasks:</Text>
-        <View style={styles.dateSection}>
-          <Text>Visit Date: {visitDate.toLocaleDateString()}</Text>
-          <Text>Next Visit: {nextVisitDate.toLocaleDateString()}</Text>
+        <View style={styles.container}>
+        <Text style={styles.dateSection}>By: Fien Dora </Text>
+          <Text style={styles.dateSection}>Visit Date: {visitDate.toLocaleDateString()}</Text>
+          <Text style={styles.dateSection}>Next Visit: {nextVisitDate.toLocaleDateString()}</Text>
+
         </View>
         <View style={styles.table}>
           <View style={styles.tableRow}>

@@ -8,14 +8,14 @@ import Container from 'react-bootstrap/Container';
 import useFetch from "../hooks/useFetch.js";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ username }) => {
   const { data: zones, isLoading, error } = useFetch("http://localhost:8006/zones");
 
   return ( 
     <>
       <Container fluid className="min-vh-100 background: #F0F2F5 ">
         <Row>
-
+        <h1>Welcome, {username}!</h1>
           <Col>
             <Summary/>
             <Row>
