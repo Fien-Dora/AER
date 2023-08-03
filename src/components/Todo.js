@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Table, Form, Button, Row, Col } from "react-bootstrap";
 import {
   PDFDownloadLink,
@@ -7,11 +7,13 @@ import {
   View,
   StyleSheet,
   Document,
+  // PDFViewer,
 } from "@react-pdf/renderer";
 import "../index.css";
 import MaintenanceHeader from "./MaintenanceHeader";
 import Stack from "react-bootstrap/Stack";
 import TaskSummaryList from "../components/TaskPageComponents/TaskSumaryList";
+import DateContext from "./DateContext";
 
 // Document styles
 const styles = StyleSheet.create({
@@ -50,42 +52,62 @@ const styles = StyleSheet.create({
     padding: "5px",
     fontSize: "10px",
   },
+  heading: {
+    fontSize: 20,
+    marginBottom: 10,
+  },
+  dateSection: {
+    marginTop: 20,
+    fontSize: 12,
+  },
 });
 
-const MyDocument = ({ completedTasks }) => (
+const MyDocument = ({ completedTasks, visitDate, nextVisitDate }) => (
   <Document>
     <Page size="A4" style={styles.page}>
-      <View style={styles.table}>
-        <View style={styles.tableRow}>
-          <Text style={styles.idCell}>ID</Text>
-          <Text style={styles.tableCell}>Task Name</Text>
-          <Text style={styles.medCell}>Quantity</Text>
-          <Text style={styles.medCell}>Progress</Text>
-          <Text style={styles.tableCell}>Progress Description</Text>
-          <Text style={styles.medCell}>Status</Text>
-          <Text style={styles.tableCell}>Observations</Text>
-          <Text style={styles.tableCell}>Completed</Text>
+      <View>
+        <Text style={styles.heading}>Completed Tasks:</Text>
+        <View style={styles.dateSection}>
+          <Text>Visit Date: {visitDate.toLocaleDateString()}</Text>
+          <Text>Next Visit: {nextVisitDate.toLocaleDateString()}</Text>
         </View>
-        {completedTasks.map((task) => (
-          <View key={task.id} style={styles.tableRow}>
-            <Text style={styles.idCell}>{task.id}</Text>
-            <Text style={styles.tableCell}>{task.name}</Text>
-            <Text style={styles.medCell}>{task.quantity}</Text>
-            <Text style={styles.medCell}>{`${task.progress}%`}</Text>
-            <Text style={styles.tableCell}>{task.progressDescription}</Text>
-            <Text style={styles.medCell}>{task.status}</Text>
-            <Text style={styles.tableCell}>{task.observations}</Text>
-            <Text style={styles.tableCell}>
-              {task.completed ? "Yes" : "No"}
-            </Text>
+        <View style={styles.table}>
+          <View style={styles.tableRow}>
+            <Text style={styles.idCell}>ID</Text>
+            <Text style={styles.tableCell}>Task Name</Text>
+            <Text style={styles.medCell}>Quantity</Text>
+            <Text style={styles.medCell}>Progress</Text>
+            <Text style={styles.tableCell}>Progress Description</Text>
+            <Text style={styles.medCell}>Status</Text>
+            <Text style={styles.tableCell}>Observations</Text>
+            <Text style={styles.tableCell}>Completed</Text>
           </View>
-        ))}
+          {completedTasks.map((task) => (
+            <View key={task.id} style={styles.tableRow}>
+              <Text style={styles.idCell}>{task.id}</Text>
+              <Text style={styles.tableCell}>{task.name}</Text>
+              <Text style={styles.medCell}>{task.quantity}</Text>
+              <Text style={styles.medCell}>{`${task.progress}%`}</Text>
+              <Text style={styles.tableCell}>{task.progressDescription}</Text>
+              <Text style={styles.medCell}>{task.status}</Text>
+              <Text style={styles.tableCell}>{task.observations}</Text>
+              <Text style={styles.tableCell}>
+                {task.completed ? "Yes" : "No"}
+              </Text>
+            </View>
+          ))}
+        </View>
       </View>
     </Page>
   </Document>
 );
 
 const TodoApp = () => {
+
+  const { visitDate, nextVisitDate } = useContext(DateContext);
+  // Logic to include Date in PDF
+  const [showPDF, setShowPDF] = useState(false);
+
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -159,9 +181,15 @@ const TodoApp = () => {
 
   const [completedTasks, setCompletedTasks] = useState([]);
 
+  // print button
+
   const handlePrintReport = () => {
     const completed = tasks.filter((task) => task.completed);
     setCompletedTasks(completed);
+    setShowPDF(true);
+  };
+  const handlePDFClose = () => {
+    setShowPDF(false);
   };
 
   const handleInputChange = (e) => {
@@ -209,7 +237,13 @@ const TodoApp = () => {
 
   return (
     <Container fluid>
-      <MaintenanceHeader onPrintReport={handlePrintReport} />
+      <MaintenanceHeader
+        onPrintReport={handlePrintReport}
+        visitDate={visitDate}
+        nextVisitDate={nextVisitDate}
+        // setVisitDate={setVisitDate}
+        // setNextVisitDate={setNextVisitDate}
+      />
       <Row>
         <Col md={12} lg={2}>
           <TaskSummaryList />
@@ -337,11 +371,17 @@ const TodoApp = () => {
 
       <Stack direction="horizontal" gap={3}>
         <div className="p-2 ms-auto">
-          {/* PDF download link */}
+          {/* PDF and pdf download link */}
           {completedTasks.length > 0 && (
             <PDFDownloadLink
               className="me-5"
-              document={<MyDocument completedTasks={completedTasks} />}
+              document={
+                <MyDocument
+                  completedTasks={completedTasks}
+                  visitDate={visitDate}
+                  nextVisitDate={nextVisitDate}
+                />
+              }
               fileName="completed_tasks.pdf"
             >
               {({ blob, url, loading, error }) =>
@@ -349,6 +389,18 @@ const TodoApp = () => {
               }
             </PDFDownloadLink>
           )}
+
+          {/* show pdf */}
+          {/* {showPDF && (
+            <PDFViewer width="100%" height="800px">
+              <MyDocument
+                completedTasks={tasks}
+                // visitDate={visitDate}
+                // nextVisitDate={nextVisitDate}
+              />
+            </PDFViewer>
+          )} */}
+
           <Button variant="success" type="submit">
             + <i> add To Report</i>
           </Button>

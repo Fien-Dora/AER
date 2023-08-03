@@ -36,10 +36,13 @@ const Sidebar = () => {
         <div className="fs-6 text-secondary ps-3">Sites and Activities</div>
 
         <div className="list-group list-group-flush">
-          <a href="/" className="list-group-item py-1 border-0">
-            <i className="bi bi-speedometer2 fs-6 me-2 text-success"></i>
+        <NavLink
+              to="/home"
+              className="list-group-item py-1 border-0 sideBar-link"
+            >
+             <i className="bi bi-speedometer2 fs-6 me-2 text-success"></i>
             <span className="fs-5">Dashboard</span>
-          </a>
+        </NavLink>
           <div>       
           </div>
           <div className="dropdown-center">

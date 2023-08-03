@@ -9,7 +9,7 @@ import useFetch from "../hooks/useFetch.js";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { data: zones, isLoading, error } = useFetch("http://localhost:8000/zones");
+  const { data: zones, isLoading, error } = useFetch("http://localhost:8006/zones");
 
   return ( 
     <>
@@ -18,23 +18,27 @@ const Home = () => {
 
           <Col>
             <Summary/>
+            <Row>
 
             {/* <Statistics/> */}
             {isLoading && <li><p className="text-primary text-center">Loading...</p></li>}
               {error && <li><p className="text-primary text-center">{error}</p></li>}
               {zones &&
                 zones.map((zone) => (
-                    <Card>
-                      <Card.Body>
+                  <Col sm={12} md={6} lg={4} xl={3} xxl={2} >
+                    <Card className="shadow my-2">
+                      <Card.Body style={{ width: '10rem' }} >
                         <Card.Title class=''>Zone {zone.id}</Card.Title>
                         <Card.Text>{zone.data.length} Sites</Card.Text>
                         <Link to={`/zone/${zone.id}`}>
-                          <button className="btn btn-primary">Visit Zone</button>
+                          <button className="btn btn-secondary">Visit Zone</button>
                         </Link>
                       </Card.Body>
                     </Card>
+                  </Col>
                 ))
               }
+            </Row>
           </Col>
         </Row>
       </Container>
