@@ -14,6 +14,7 @@ import MaintenanceHeader from "./MaintenanceHeader";
 import Stack from "react-bootstrap/Stack";
 import TaskSummaryList from "../components/TaskPageComponents/TaskSumaryList";
 import DateContext from "../hooks/DateContext";
+import UserContext from "../hooks/UserContext";
 
 // Document styles
 const styles = StyleSheet.create({
@@ -69,13 +70,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const MyDocument = ({ completedTasks, visitDate, nextVisitDate }) => (
+const MyDocument = ({ completedTasks, visitDate, nextVisitDate, username}) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View>
         <Text style={styles.heading}>Completed Tasks:</Text>
         <View style={styles.container}>
-        <Text style={styles.dateSection}>By: Fien Dora </Text>
+        <Text style={styles.dateSection}>By: { username }  </Text>
           <Text style={styles.dateSection}>Visit Date: {visitDate.toLocaleDateString()}</Text>
           <Text style={styles.dateSection}>Next Visit: {nextVisitDate.toLocaleDateString()}</Text>
 
@@ -114,6 +115,8 @@ const MyDocument = ({ completedTasks, visitDate, nextVisitDate }) => (
 const TodoApp = () => {
 
   const { visitDate, nextVisitDate } = useContext(DateContext);
+
+  const {username} = useContext(UserContext);
   // Logic to include Date in PDF
   const [showPDF, setShowPDF] = useState(false);
 
@@ -389,6 +392,7 @@ const TodoApp = () => {
                   completedTasks={completedTasks}
                   visitDate={visitDate}
                   nextVisitDate={nextVisitDate}
+                  username={username}
                 />
               }
               fileName="completed_tasks.pdf"

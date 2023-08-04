@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { DateProvider } from "./hooks/DateContext";
+import { UserProvider } from "./hooks/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <DateProvider>
-      <App />
-    </DateProvider>
+    <UserProvider>
+      <DateProvider>
+        <App />
+      </DateProvider>
+    </UserProvider>
   </React.StrictMode>
 );
 

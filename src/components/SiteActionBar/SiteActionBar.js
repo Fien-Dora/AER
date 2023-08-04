@@ -27,7 +27,7 @@ const SiteActionBar = () => {
 
         <Col lg="4" className="px-1"></Col>
         <Col>
-          <a href="/" className="list-group-item border-0">
+          <a href="#" className="list-group-item border-0">
             <div className="text-success new-site p-1">
               <i className="bi bi-pencil-square text-success mx-2"></i>Create
               New Site

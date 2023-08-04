@@ -1,21 +1,24 @@
 {
-
   "users": [
-    {
+    { 
+      "id": 1,
       "username": "Fien ",
-      "password": "password1"
+      "password": "fien"
     },
     {
-      "username": "Mbog",
-      "password": "password2"
+      "id": 2,
+      "username": "Mr Mbog",
+      "password": "mbog"
     },
     {
+      "id": 3,
       "username": "Angelo",
-      "password": "password3"
+      "password": "angelo"
     },
     {
-      "username": "Lambert",
-      "password": "password4"
+      "id": 4,
+      "username": "Mr Lambert",
+      "password": "lambert"
     }
   ],
   "categories": [

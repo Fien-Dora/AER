@@ -3,19 +3,21 @@ import Statistics from "../components/sites/Statistics.js";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import useFetch from "../hooks/useFetch.js";
 import { Link } from "react-router-dom";
+import UserContext from "../hooks/UserContext";
+import { useContext, useState } from "react";
 
-const Home = ({ username }) => {
+
+const Home = () => {
   const { data: zones, isLoading, error } = useFetch("http://localhost:8006/zones");
+  const { username } = useContext(UserContext);
 
   return ( 
     <>
       <Container fluid className="min-vh-100 background: #F0F2F5 ">
         <Row>
-        <h1>Welcome, {username}!</h1>
           <Col>
             <Summary/>
             <Row>
