@@ -1,6 +1,6 @@
 {
   "users": [
-    { 
+    {
       "id": 1,
       "username": "Fien ",
       "password": "fien"
@@ -26,19 +26,532 @@
       "id": 1,
       "name": "Production",
       "image": "production",
-      "description": "Installation and initial power"
+      "description": "Installation and initial power",
+      "subcategories": [
+        {
+          "id": "1",
+          "name": "pv",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "Nettoyage PV",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "mesurer les tensions",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "inspection visuelle",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 4,
+              "name": "Vérifier les vis desserrées",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 5,
+              "name": "Verification de l’encrassement des panneaux",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 6,
+              "name": "Vérifier la présence d’un point chaud",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "casses",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "remplacer les PV cassés",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "isoler les PV endommagés",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "verification des fissures legeres",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+
+            {
+              "id": 6,
+              "name": "Vérifier la présence d’un point chaud",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "name": "junctionBox",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "inspection visuelle",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "mesurer les tensions",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "remplacer les fusibles",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 4,
+              "name": "remplacer les parafoudres",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 5,
+              "name": "remplacer le disjoncteur",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 2,
       "name": "storage",
       "image": "storage",
-      "description": "Power storage mediums and batteries"
+      "description": "Power storage mediums and batteries",
+      "subcategories": [
+        {
+          "id": "1",
+          "name": "Batteries",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "isoler les batteries à risque",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "inspection visuelle",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "mesurer les tensions",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 4,
+              "name": "verifier les serrages",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 5,
+              "name": "isoler les batteries à risque",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "BatteriesEndomagées",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "bas",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "moyen",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "elevé",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+           {
+              "id": 4,
+              "name": "à risque",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "CabineDeBatteries",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "cabine de batterie en arret",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "cabine de batterie en fonctionnement",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 3,
       "name": "Equipments",
       "image": "equipments",
-      "description": "Power equipments and stand by devices"
+      "description": "Power equipments and stand by devices",
+      "subcategories": [
+        {
+          "id": "1",
+          "name": "SystèmeElectrique",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "remplacer les disjoncteur",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "mesurer les tensions",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "essais electrique",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "DetecteurDeFumee",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "remplacer les detecteur",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "inspection visuelle",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },	
+             {
+              "id": 3,
+              "name": "inspection visuelle",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "Lamps",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "remplacer les lampes",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "inspection visuelle",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "name": "Extracteurs",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "remplacer les moteur",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "remplacer l'helice",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "remplacer les condo",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 4,
+              "name": "tester la sonde",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "name": "Climatiseur",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "recharger le fluide",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 2,
+              "name": "Vérification de l’évaporateur",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 3,
+              "name": "vérification du détendeur",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 4,
+              "name": "vérification des fuites",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 5,
+              "name": "vérification du condenseur",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            },
+            {
+              "id": 6,
+              "name": "vérification du comprehenseur ",
+              "quantity": 0,
+              "progress": 0,
+              "progressDescription": "",
+              "status": "",
+              "observations": "No observations",
+              "completed": false
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 4,
@@ -57,222 +570,6 @@
       "name": "Consupmtion",
       "image": "consumption",
       "description": "Meters and consumer maintenance"
-    }
-  ],
-
-  "equipments": [
-    {
-      "id": 1,
-      "typeName" : [
-        {
-      "data": [
-        {
-          "id": 1,
-          "name": "remplacer les disjoncteur",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 2,
-          "name": "mesurer les tensions",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 3,
-          "name": "essais electrique",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "typeName": "DetecteurDeFumee",
-      "data": [
-        {
-          "id": 1,
-          "name": "remplacer les detecteur",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 2,
-          "name": "inspection visuelle",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 3,
-          "name": "inspection visuelle",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "typeName": "Lamps",
-      "data ": [
-        {
-          "id": 1,
-          "name": "remplacer les lampes",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 2,
-          "name": "inspection visuelle",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "typeName": "Extracteurs",
-      "data": [
-        {
-          "id": 1,
-          "name": "remplacer les moteur",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 2,
-          "name": "remplacer l'helice",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 3,
-          "name": "remplacer les condo",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 4,
-          "name": "tester la sonde",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        }
-      ]
-    }
-  ]
-    },
-    {
-      "id": 5,
-      "typeName":"Climatiseur",
-      "data": [
-        {
-          "id": 1,
-          "name": "recharger le fluide",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 2,
-          "name": "Vérification de l’évaporateur",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 3,
-          "name": "vérification du détendeur",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 4,
-          "name": "vérification des fuites",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 5,
-          "name": "vérification du condenseur",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        },
-        {
-          "id": 6,
-          "name": "vérification du comprehenseur ",
-          "quantity": 0,
-          "progress": 0,
-          "progressDescription": "",
-          "status": "",
-          "observations": "No observations",
-          "completed": false
-        }
-      ]
     }
   ],
 
