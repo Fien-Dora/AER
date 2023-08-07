@@ -19,6 +19,11 @@
       "id": 4,
       "username": "Mr Lambert",
       "password": "lambert"
+    },
+    {
+      "id": 5,
+      "username": "Bouba",
+      "password": "bello5528"
     }
   ],
   "categories": [

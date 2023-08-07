@@ -2,7 +2,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 
-const ActionField = () => {
+const ActionField = ({ onClick }) => {
   return (
     <>
       <Row className="px-3">
@@ -20,7 +20,7 @@ const ActionField = () => {
         </Col>
         {/* Maintainace */}
         <Col>
-          <Link to="/Category" className="list-group-item border-0">
+          <Link to="/Category" className="list-group-item border-0"  onClick={onClick}>
             <i className="bi bi-gear-fill"></i>
           </Link>
         </Col>

@@ -15,6 +15,8 @@ import Stack from "react-bootstrap/Stack";
 import TaskSummaryList from "../components/TaskPageComponents/TaskSumaryList";
 import DateContext from "../hooks/DateContext";
 import UserContext from "../hooks/UserContext";
+import { useSiteData } from "../hooks/SiteDataContext";
+
 
 // Document styles
 const styles = StyleSheet.create({
@@ -68,18 +70,52 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginVertical: 10,
   },
+  sitetableRow: {
+    flexDirection: "row",
+    borderColor: "#000",
+    alignItems: "flex-start",
+  },
+  sitetableCell: {
+    width: "30%",
+    padding: "5px",
+    fontSize: "10px",
+
+  },
 });
 
-const MyDocument = ({ completedTasks, visitDate, nextVisitDate, username}) => (
+const MyDocument = ({
+  completedTasks,
+  visitDate,
+  nextVisitDate,
+  username,
+  siteData,
+}) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View>
         <Text style={styles.heading}>Completed Tasks:</Text>
-        <View style={styles.container}>
-        <Text style={styles.dateSection}>By: { username }  </Text>
-          <Text style={styles.dateSection}>Visit Date: {visitDate.toLocaleDateString()}</Text>
-          <Text style={styles.dateSection}>Next Visit: {nextVisitDate.toLocaleDateString()}</Text>
+        <View style={styles.table}>
 
+          <View style={styles.sitetableRow}>
+            <Text style={styles.sitetableCell}> Name of Site: {siteData.Nomdusite} </Text>
+            <Text style={styles.sitetableCell}>  Capacity: {siteData.Capacité}KW </Text>
+            <Text style={styles.sitetableCell}> Region: {siteData.Région} </Text>
+          </View>
+          <View style={styles.sitetableRow}>
+            <Text style={styles.sitetableCell}> Division: {siteData.Département} </Text>
+            <Text style={styles.sitetableCell}> Sub-Division: {siteData.Arrondissement} </Text>
+            <Text style={styles.sitetableCell}> Phase: {siteData.Phase} </Text>\
+          </View>
+        </View>
+
+        <View style={styles.container}>
+          <Text style={styles.dateSection}>By: {username} </Text>
+          <Text style={styles.dateSection}>
+            Visit Date: {visitDate.toLocaleDateString()}
+          </Text>
+          <Text style={styles.dateSection}>
+            Next Visit: {nextVisitDate.toLocaleDateString()}
+          </Text>
         </View>
         <View style={styles.table}>
           <View style={styles.tableRow}>
@@ -113,10 +149,13 @@ const MyDocument = ({ completedTasks, visitDate, nextVisitDate, username}) => (
 );
 
 const TodoApp = () => {
-
   const { visitDate, nextVisitDate } = useContext(DateContext);
 
-  const {username} = useContext(UserContext);
+  const { username } = useContext(UserContext);
+
+  const { siteData } = useSiteData() || { siteData: "Default Site Data" };
+
+  console.log('siteData', siteData)
   // Logic to include Date in PDF
   const [showPDF, setShowPDF] = useState(false);
 
@@ -393,6 +432,7 @@ const TodoApp = () => {
                   visitDate={visitDate}
                   nextVisitDate={nextVisitDate}
                   username={username}
+                  siteData={siteData}
                 />
               }
               fileName="completed_tasks.pdf"

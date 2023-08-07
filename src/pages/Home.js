@@ -1,18 +1,14 @@
 import Summary from "../components/summary.js";
-import Statistics from "../components/sites/Statistics.js";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import useFetch from "../hooks/useFetch.js";
 import { Link } from "react-router-dom";
-import UserContext from "../hooks/UserContext";
-import { useContext, useState } from "react";
 
 
 const Home = () => {
   const { data: zones, isLoading, error } = useFetch("http://localhost:8006/zones");
-  const { username } = useContext(UserContext);
 
   return ( 
     <>

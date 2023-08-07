@@ -5,15 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { DateProvider } from "./hooks/DateContext";
 import { UserProvider } from "./hooks/UserContext";
+import { SiteDataProvider } from "./hooks/SiteDataContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <UserProvider>
-      <DateProvider>
-        <App />
-      </DateProvider>
-    </UserProvider>
+    <SiteDataProvider>
+      <UserProvider>
+        <DateProvider>
+          <App />
+        </DateProvider>
+      </UserProvider>
+    </SiteDataProvider>
   </React.StrictMode>
 );
 

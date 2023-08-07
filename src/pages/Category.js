@@ -6,6 +6,7 @@ const Category = () => {
     isLoading,
     error,
   } = useFetch("http://localhost:8006/categories");
+  
   return (
     <>
       <div>

@@ -5,17 +5,17 @@ import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import SiteActionBar from "../components/SiteActionBar/SiteActionBar";
 import Summary from "../components/summary";
+import { useSiteData } from "../hooks/SiteDataContext"
 
 const ZonesPage = () => {
   const { id } = useParams();
-  console.log("id =>", id);
+  const { siteData, setSiteData } = useSiteData();
 
   const {
     data: zone,
     isLoading,
     error,
   } = useFetch(`http://localhost:8006/zones/${id}`);
-  console.log("Zone =>", zone);
   return (
     <div className="m-4">
       {/* <h2>Zones</h2> */}
@@ -70,7 +70,7 @@ const ZonesPage = () => {
                         </td>
 
                         <td className="p-1">
-                          <ActionField />
+                          <ActionField onClick={() => setSiteData(zoneData)} />
                         </td>
 
                         <td className="p-1">{zoneData.Nomdusite}</td>
