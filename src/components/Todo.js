@@ -16,6 +16,10 @@ import TaskSummaryList from "../components/TaskPageComponents/TaskSumaryList";
 import DateContext from "../hooks/DateContext";
 import UserContext from "../hooks/UserContext";
 import { useSiteData } from "../hooks/SiteDataContext";
+import { useParams } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
+import Subcategories from "./Subcategories";
+
 
 
 // Document styles
@@ -149,6 +153,17 @@ const MyDocument = ({
 );
 
 const TodoApp = () => {
+
+  const { id } = useParams();
+  console.log('id=>', id)
+  const {
+    data: categories,
+    isLoading,
+    error,
+  } = useFetch(`http://localhost:8006/categories/${id}`);
+  console.log('categories=>', categories);
+
+
   const { visitDate, nextVisitDate } = useContext(DateContext);
 
   const { username } = useContext(UserContext);
@@ -296,11 +311,12 @@ const TodoApp = () => {
         // setNextVisitDate={setNextVisitDate}
       />
       <Row>
-        <Col md={12} lg={2}>
-          <TaskSummaryList />
+        <Col md={12} lg={3}>
+          {/* <TaskSummaryList categories={categories} /> */}
+          <Subcategories/>
         </Col>
 
-        <Col md={12} lg={10}>
+        <Col md={12} lg={9}>
           <div className="responsiveTable">
             <Table striped bordered>
               <thead>
@@ -317,7 +333,9 @@ const TodoApp = () => {
                 </tr>
               </thead>
               <tbody>
-                {tasks.map((task) => (
+              {categories && 
+                  categories.subcategories.map((subcategory) =>
+                    subcategory.tasks.map((task) => (
                   <tr key={task.id}>
                     <td>{task.id}</td>
                     <td>{task.name}</td>
@@ -413,7 +431,8 @@ const TodoApp = () => {
                       </Button>
                     </td>
                   </tr>
-                ))}
+                    ))
+                )}
               </tbody>
             </Table>
           </div>

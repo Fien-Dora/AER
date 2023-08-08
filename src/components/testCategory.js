@@ -31,7 +31,7 @@ const MaintainCard = ({ categories }) => {
               </Card.Text>
 
               <Link
-                to="/Maintain"
+                to={`/category/${category.id}`}
                 className="list-group-item border-0 text-success py-1"
               >
                 <i className="bi bi-gear-fill pe-1"></i> Maintain

@@ -34,17 +34,13 @@ export const routes = createBrowserRouter([
           },
 
           {
-            path: "maintain",
+            path: "category/:id",
             element: <Maintain />,
           },
 
           {
             path: "zone/:id",
             element: <ZonesPage />
-          },
-          {
-            path: "equipments/:id",
-            element: <TaskPage />
           }
         ],
       },

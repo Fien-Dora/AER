@@ -16,6 +16,7 @@ const ZonesPage = () => {
     isLoading,
     error,
   } = useFetch(`http://localhost:8006/zones/${id}`);
+  // console.log('zone test data=>', zone.data)
   return (
     <div className="m-4">
       {/* <h2>Zones</h2> */}

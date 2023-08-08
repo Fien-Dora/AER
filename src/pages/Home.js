@@ -17,7 +17,6 @@ const Home = () => {
           <Col>
             <Summary/>
             <Row>
-
             {/* <Statistics/> */}
             {isLoading && <li><p className="text-primary text-center">Loading...</p></li>}
               {error && <li><p className="text-primary text-center">{error}</p></li>}
