@@ -1,6 +1,10 @@
+import { useState } from "react";
 import MaintainCard from "../components/testCategory.js";
 import useFetch from "../hooks/useFetch.js";
+
+
 const Category = () => {
+
   const {
     data: categories,
     isLoading,
@@ -12,7 +16,11 @@ const Category = () => {
       <div>
         {isLoading && <p className="text-primary text-center">Loading...</p>}
         {error && <p className="text-primary text-center">{error}</p>}
-        {categories && <MaintainCard categories={categories} />}
+        {categories && 
+          <>
+          <MaintainCard categories={categories}/>
+        </>
+        }
       </div>
     </>
   );

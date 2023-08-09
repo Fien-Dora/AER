@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import '..//assets/Styles/card.css';
 import '../data/category/category.json';
 import images from "../utils/images";
+import { useCategoryName } from "../context/CategoryNameContext";
    
 
 
@@ -15,6 +16,13 @@ const MaintainCard = ({ categories }) => {
   //     <h2>Category data not found</h2>
   //   );
   // }
+  const { CategoryName, setCategoryName } = useCategoryName();
+  console.log('selected category', CategoryName);
+
+  const onClickCategory = (categoryName) => {
+    setCategoryName(categoryName); // Update selected category name
+  };
+
   
   return (
     <>
@@ -33,6 +41,7 @@ const MaintainCard = ({ categories }) => {
               <Link
                 to={`/category/${category.id}`}
                 className="list-group-item border-0 text-success py-1"
+                onClick={() => onClickCategory(category.name)}
               >
                 <i className="bi bi-gear-fill pe-1"></i> Maintain
               </Link>

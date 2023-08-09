@@ -2,17 +2,22 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoCalendarOutline } from "react-icons/io5";
 import { Button, Stack } from "react-bootstrap";
-import DateContext from "../hooks/DateContext";
+import DateContext from "../context/DateContext";
 import { useContext } from "react";
+import { useCategoryName } from "../context/CategoryNameContext";
 
 const MaintenanceHeader = ({ onPrintReport }) => {
 
   const { visitDate, nextVisitDate, setVisitDate, setNextVisitDate } = useContext(DateContext);
+ 
+  const { CategoryName } = useCategoryName() || { categoryName: "Default Category" };
+  console.log('CategoryName', CategoryName)
+
 
   return (
     <>
       <Stack direction="horizontal">
-        <div className="p-2 fs-2">Equipments</div>
+        <div className="p-2 fs-2">{CategoryName}</div>
         <div className="p-2 ms-auto">
           Visit Date:
           <IoCalendarOutline className="calendar-icon mx-2" />

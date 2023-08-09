@@ -13,9 +13,9 @@ import "../index.css";
 import MaintenanceHeader from "./MaintenanceHeader";
 import Stack from "react-bootstrap/Stack";
 import TaskSummaryList from "../components/TaskPageComponents/TaskSumaryList";
-import DateContext from "../hooks/DateContext";
-import UserContext from "../hooks/UserContext";
-import { useSiteData } from "../hooks/SiteDataContext";
+import DateContext from "../context/DateContext";
+import UserContext from "../context/UserContext";
+import { useSiteData } from "../context/SiteDataContext";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Subcategories from "./Subcategories";
@@ -152,16 +152,25 @@ const MyDocument = ({
   </Document>
 );
 
-const TodoApp = () => {
+const TodoApp = ( ) => {
 
   const { id } = useParams();
   console.log('id=>', id)
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+
+  
   const {
     data: categories,
     isLoading,
     error,
   } = useFetch(`http://localhost:8006/categories/${id}`);
   console.log('categories=>', categories);
+
+  const filteredTasks = categories ? categories.subcategories
+  .filter(subcategory => subcategory.id === selectedSubcategory)
+  .flatMap(subcategory => subcategory.tasks) : [];
 
 
   const { visitDate, nextVisitDate } = useContext(DateContext);
@@ -174,68 +183,72 @@ const TodoApp = () => {
   // Logic to include Date in PDF
   const [showPDF, setShowPDF] = useState(false);
 
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      name: "recharger le fluide",
-      quantity: 0,
-      progress: 50,
-      progressDescription: "Half Way done",
-      status: "OK",
-      observations: "No observations",
-      completed: false,
-    },
-    {
-      id: 2,
-      name: "Vérification de l’évaporateur",
-      quantity: 0,
-      progress: 0,
-      progressDescription: "",
-      status: "OK",
-      observations: "No observations",
-      completed: false,
-    },
-    {
-      id: 3,
-      name: "vérification du détendeur",
-      quantity: 0,
-      progress: 0,
-      progressDescription: "",
-      status: "OK",
-      observations: "No observations",
-      completed: false,
-    },
-    {
-      id: 4,
-      name: "vérification des fuites",
-      quantity: 0,
-      progress: 0,
-      progressDescription: "",
-      status: "NOK",
-      observations: "No observations",
-      completed: false,
-    },
-    {
-      id: 5,
-      name: "vérification du condenseur",
-      quantity: 0,
-      progress: 0,
-      progressDescription: "",
-      status: "OK",
-      observations: "No observations",
-      completed: false,
-    },
-    {
-      id: 6,
-      name: "vérification du comprehenseur ",
-      quantity: 0,
-      progress: 0,
-      progressDescription: "",
-      status: "NOK",
-      observations: "No observations",
-      completed: false,
-    },
-  ]);
+  const initialTasks = categories ? categories.subcategories.flatMap(subcategory => subcategory.tasks) : [];
+
+  const [tasks, setTasks] = useState(initialTasks);
+
+  // const [tasks, setTasks] = useState([
+  //   {
+  //     id: 1,
+  //     name: "recharger le fluide",
+  //     quantity: 0,
+  //     progress: 50,
+  //     progressDescription: "Half Way done",
+  //     status: "OK",
+  //     observations: "No observations",
+  //     completed: false,
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Vérification de l’évaporateur",
+  //     quantity: 0,
+  //     progress: 0,
+  //     progressDescription: "",
+  //     status: "OK",
+  //     observations: "No observations",
+  //     completed: false,
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "vérification du détendeur",
+  //     quantity: 0,
+  //     progress: 0,
+  //     progressDescription: "",
+  //     status: "OK",
+  //     observations: "No observations",
+  //     completed: false,
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "vérification des fuites",
+  //     quantity: 0,
+  //     progress: 0,
+  //     progressDescription: "",
+  //     status: "NOK",
+  //     observations: "No observations",
+  //     completed: false,
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "vérification du condenseur",
+  //     quantity: 0,
+  //     progress: 0,
+  //     progressDescription: "",
+  //     status: "OK",
+  //     observations: "No observations",
+  //     completed: false,
+  //   },
+  //   {
+  //     id: 6,
+  //     name: "vérification du comprehenseur ",
+  //     quantity: 0,
+  //     progress: 0,
+  //     progressDescription: "",
+  //     status: "NOK",
+  //     observations: "No observations",
+  //     completed: false,
+  //   },
+  // ]);
 
   const [newTask, setNewTask] = useState({
     progress: 0,
@@ -313,7 +326,7 @@ const TodoApp = () => {
       <Row>
         <Col md={12} lg={3}>
           {/* <TaskSummaryList categories={categories} /> */}
-          <Subcategories/>
+          <Subcategories onSelectSubcategory={setSelectedSubcategory}/>
         </Col>
 
         <Col md={12} lg={9}>
@@ -333,9 +346,7 @@ const TodoApp = () => {
                 </tr>
               </thead>
               <tbody>
-              {categories && 
-                  categories.subcategories.map((subcategory) =>
-                    subcategory.tasks.map((task) => (
+              {filteredTasks.map((task) => (
                   <tr key={task.id}>
                     <td>{task.id}</td>
                     <td>{task.name}</td>
@@ -432,7 +443,7 @@ const TodoApp = () => {
                     </td>
                   </tr>
                     ))
-                )}
+                }
               </tbody>
             </Table>
           </div>

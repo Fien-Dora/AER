@@ -20,7 +20,7 @@ const ActionField = ({ onClick }) => {
         </Col>
         {/* Maintainace */}
         <Col>
-          <Link to="/Category" className="list-group-item border-0"  onClick={onClick}>
+          <Link to="/Category" className="list-group-item border-0" onClick={onClick}>
             <i className="bi bi-gear-fill"></i>
           </Link>
         </Col>

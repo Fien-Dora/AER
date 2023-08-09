@@ -147,7 +147,7 @@
           ]
         },
         {
-          "id": "1",
+          "id": "3",
           "name": "junctionBox",
           "tasks": [
             {
@@ -206,7 +206,7 @@
     },
     {
       "id": 2,
-      "name": "storage",
+      "name": "Storage",
       "image": "storage",
       "description": "Power storage mediums and batteries",
       "subcategories": [

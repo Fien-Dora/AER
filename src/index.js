@@ -3,18 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { DateProvider } from "./hooks/DateContext";
-import { UserProvider } from "./hooks/UserContext";
-import { SiteDataProvider } from "./hooks/SiteDataContext";
+import { DateProvider } from "./context/DateContext";
+import { UserProvider } from "./context/UserContext";
+import { SiteDataProvider } from "./context/SiteDataContext";
+import { CategoryNameProvider } from "./context/CategoryNameContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <SiteDataProvider>
       <UserProvider>
-        <DateProvider>
-          <App />
-        </DateProvider>
+        <CategoryNameProvider>
+          <DateProvider>
+            <App />
+          </DateProvider>
+        </CategoryNameProvider>
       </UserProvider>
     </SiteDataProvider>
   </React.StrictMode>

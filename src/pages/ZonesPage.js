@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import SiteActionBar from "../components/SiteActionBar/SiteActionBar";
 import Summary from "../components/summary";
-import { useSiteData } from "../hooks/SiteDataContext"
+import { useSiteData } from "../context/SiteDataContext"
 
 const ZonesPage = () => {
   const { id } = useParams();
@@ -16,7 +16,6 @@ const ZonesPage = () => {
     isLoading,
     error,
   } = useFetch(`http://localhost:8006/zones/${id}`);
-  // console.log('zone test data=>', zone.data)
   return (
     <div className="m-4">
       {/* <h2>Zones</h2> */}
