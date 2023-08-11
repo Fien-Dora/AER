@@ -24,13 +24,13 @@ code {
 }
 
 a.active {
-  background-color: #2a682d !important;
+  color: #2a682d !important;
   font-weight: bold !important;
 }
 
 a.sideBar-link:hover {
-  background-color: transparent !important;
-  color: #2a682d !important;
+  color: white !important;
+  background-color: #2a682d !important;
   font-weight: bold !important;
 }
 

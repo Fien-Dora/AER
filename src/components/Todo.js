@@ -20,8 +20,6 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Subcategories from "./Subcategories";
 
-
-
 // Document styles
 const styles = StyleSheet.create({
   page: {
@@ -83,7 +81,6 @@ const styles = StyleSheet.create({
     width: "30%",
     padding: "5px",
     fontSize: "10px",
-
   },
 });
 
@@ -99,16 +96,30 @@ const MyDocument = ({
       <View>
         <Text style={styles.heading}>Completed Tasks:</Text>
         <View style={styles.table}>
-
           <View style={styles.sitetableRow}>
-            <Text style={styles.sitetableCell}> Name of Site: {siteData.Nomdusite} </Text>
-            <Text style={styles.sitetableCell}>  Capacity: {siteData.Capacité}KW </Text>
-            <Text style={styles.sitetableCell}> Region: {siteData.Région} </Text>
+            <Text style={styles.sitetableCell}>
+              {" "}
+              Name of Site: {siteData.Nomdusite}{" "}
+            </Text>
+            <Text style={styles.sitetableCell}>
+              {" "}
+              Capacity: {siteData.Capacité}KW{" "}
+            </Text>
+            <Text style={styles.sitetableCell}>
+              {" "}
+              Region: {siteData.Région}{" "}
+            </Text>
           </View>
           <View style={styles.sitetableRow}>
-            <Text style={styles.sitetableCell}> Division: {siteData.Département} </Text>
-            <Text style={styles.sitetableCell}> Sub-Division: {siteData.Arrondissement} </Text>
-            <Text style={styles.sitetableCell}> Phase: {siteData.Phase} </Text>\
+            <Text style={styles.sitetableCell}>
+              {" "}
+              Division: {siteData.Département}{" "}
+            </Text>
+            <Text style={styles.sitetableCell}>
+              {" "}
+              Sub-Division: {siteData.Arrondissement}{" "}
+            </Text>
+            <Text style={styles.sitetableCell}> Phase: {siteData.Phase} </Text>
           </View>
         </View>
 
@@ -152,26 +163,31 @@ const MyDocument = ({
   </Document>
 );
 
-const TodoApp = ( ) => {
-
+const TodoApp = () => {
   const { id } = useParams();
-  console.log('id=>', id)
+  console.log("id=>", id);
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
 
-  
   const {
     data: categories,
     isLoading,
     error,
   } = useFetch(`http://localhost:8006/categories/${id}`);
-  console.log('categories=>', categories);
+  console.log("categories=>", categories);
 
-  const filteredTasks = categories ? categories.subcategories
-  .filter(subcategory => subcategory.id === selectedSubcategory)
-  .flatMap(subcategory => subcategory.tasks) : [];
+  const [filteredTasks, setFilteredTasks] = useState([]);
+  const [editingTaskId, setEditingTaskId] = useState(null);
 
+  useEffect(() => {
+    if (categories && selectedSubcategory !== null) {
+      const selectedSubcategoryTasks =
+        categories.subcategories.find(
+          (subcategory) => subcategory.id === selectedSubcategory
+        )?.tasks || [];
+      setFilteredTasks(selectedSubcategoryTasks);
+    }
+  }, [categories, selectedSubcategory]);
 
   const { visitDate, nextVisitDate } = useContext(DateContext);
 
@@ -179,76 +195,9 @@ const TodoApp = ( ) => {
 
   const { siteData } = useSiteData() || { siteData: "Default Site Data" };
 
-  console.log('siteData', siteData)
+  console.log("siteData", siteData);
   // Logic to include Date in PDF
   const [showPDF, setShowPDF] = useState(false);
-
-  const initialTasks = categories ? categories.subcategories.flatMap(subcategory => subcategory.tasks) : [];
-
-  const [tasks, setTasks] = useState(initialTasks);
-
-  // const [tasks, setTasks] = useState([
-  //   {
-  //     id: 1,
-  //     name: "recharger le fluide",
-  //     quantity: 0,
-  //     progress: 50,
-  //     progressDescription: "Half Way done",
-  //     status: "OK",
-  //     observations: "No observations",
-  //     completed: false,
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Vérification de l’évaporateur",
-  //     quantity: 0,
-  //     progress: 0,
-  //     progressDescription: "",
-  //     status: "OK",
-  //     observations: "No observations",
-  //     completed: false,
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "vérification du détendeur",
-  //     quantity: 0,
-  //     progress: 0,
-  //     progressDescription: "",
-  //     status: "OK",
-  //     observations: "No observations",
-  //     completed: false,
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "vérification des fuites",
-  //     quantity: 0,
-  //     progress: 0,
-  //     progressDescription: "",
-  //     status: "NOK",
-  //     observations: "No observations",
-  //     completed: false,
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "vérification du condenseur",
-  //     quantity: 0,
-  //     progress: 0,
-  //     progressDescription: "",
-  //     status: "OK",
-  //     observations: "No observations",
-  //     completed: false,
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "vérification du comprehenseur ",
-  //     quantity: 0,
-  //     progress: 0,
-  //     progressDescription: "",
-  //     status: "NOK",
-  //     observations: "No observations",
-  //     completed: false,
-  //   },
-  // ]);
 
   const [newTask, setNewTask] = useState({
     progress: 0,
@@ -256,63 +205,69 @@ const TodoApp = ( ) => {
     observations: "",
   });
 
-  const [editingTaskId, setEditingTaskId] = useState(null);
-
   const [completedTasks, setCompletedTasks] = useState([]);
+  console.log('Completed Tasks', completedTasks)
 
   // print button
 
   const handlePrintReport = () => {
-    const completed = tasks.filter((task) => task.completed);
-    setCompletedTasks(completed);
-    setShowPDF(true);
+    const completed = filteredTasks.filter((task) => task.completed);
+    if (completed.length > 0) {
+      setCompletedTasks(completed);
+      setShowPDF(true);
+    } else {
+      alert("No tasks have been completed."); 
+    }
   };
+
   const handlePDFClose = () => {
     setShowPDF(false);
-  };
-
-  const handleInputChange = (e) => {
-    setNewTask({ ...newTask, [e.target.name]: e.target.value });
-  };
-
-  const handleCheckboxChange = (taskId) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task
-      )
-    );
-  };
-
-  const handleAddTask = (e) => {
-    e.preventDefault();
-    const task = {
-      ...newTask,
-      id: Date.now(),
-    };
-    setTasks([...tasks, task]);
-    setNewTask({
-      name: "",
-      description: "",
-      progress: 0,
-      progressDescription: "",
-      status: "",
-      observations: "",
-      completed: false,
-    });
   };
 
   const handleEditTask = (taskId) => {
     setEditingTaskId(taskId);
   };
 
+  const handleInputChange = (e, taskId) => {
+    const { name, value } = e.target;
+    setFilteredTasks((prevFilteredTasks) =>
+      prevFilteredTasks.map((task) =>
+        task.id === taskId ? { ...task, [name]: value } : task
+      )
+    );
+  };
+
   const handleUpdateTask = (taskId) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
+    setFilteredTasks((prevFilteredTasks) =>
+      prevFilteredTasks.map((task) =>
         task.id === taskId ? { ...task, ...newTask } : task
       )
     );
     setEditingTaskId(null);
   };
+
+  const handleCheckboxChange = (taskId) => {
+  setFilteredTasks((prevFilteredTasks) =>
+    prevFilteredTasks.map((task) => {
+      if (task.id === taskId) {
+        const updatedTask = { ...task, completed: !task.completed };
+        if (updatedTask.completed) {
+          setCompletedTasks((prevCompletedTasks) => [...prevCompletedTasks, updatedTask]);
+        } else {
+          setCompletedTasks((prevCompletedTasks) => prevCompletedTasks.filter((t) => t.id !== taskId));
+        }
+
+        console.log("Completed Tasks Array:", completedTasks); // Add this line
+
+        return updatedTask;
+      } else {
+        return task;
+      }
+    })
+  );
+};
+
+  
 
   return (
     <Container fluid>
@@ -326,7 +281,7 @@ const TodoApp = ( ) => {
       <Row>
         <Col md={12} lg={3}>
           {/* <TaskSummaryList categories={categories} /> */}
-          <Subcategories onSelectSubcategory={setSelectedSubcategory}/>
+          <Subcategories onSelectSubcategory={setSelectedSubcategory} />
         </Col>
 
         <Col md={12} lg={9}>
@@ -346,7 +301,7 @@ const TodoApp = ( ) => {
                 </tr>
               </thead>
               <tbody>
-              {filteredTasks.map((task) => (
+                {filteredTasks.map((task) => (
                   <tr key={task.id}>
                     <td>{task.id}</td>
                     <td>{task.name}</td>
@@ -368,7 +323,7 @@ const TodoApp = ( ) => {
                           type="number"
                           name="progress"
                           value={newTask.progress}
-                          onChange={handleInputChange}
+                          onChange= {handleInputChange}
                         />
                       ) : (
                         `${task.progress}%`
@@ -425,7 +380,7 @@ const TodoApp = ( ) => {
                           variant=""
                           onClick={() => handleUpdateTask(task.id)}
                         >
-                          <i class="bi bi-save text-success mx-2"></i>
+                          <i className="bi bi-save text-success mx-2"></i>
                         </Button>
                       ) : (
                         // edit
@@ -442,8 +397,7 @@ const TodoApp = ( ) => {
                       </Button>
                     </td>
                   </tr>
-                    ))
-                }
+                ))}
               </tbody>
             </Table>
           </div>

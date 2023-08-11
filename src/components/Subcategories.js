@@ -22,7 +22,8 @@ const Subcategories = ({ onSelectSubcategory }) => {
           categories.subcategories.map((subcategory) => (
             <NavLink
               key={subcategory.id}
-              to={`/category/${id}`} 
+              to={`/category/${id}`}
+              isActive={() => subcategory.id === onSelectSubcategory}
               className="list-group-item py-1 border-0 sideBar-link"
               onClick={() => onSelectSubcategory(subcategory.id)}
             >
