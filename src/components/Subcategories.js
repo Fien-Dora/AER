@@ -1,5 +1,6 @@
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import { Button } from "react-bootstrap";
 
 const Subcategories = ({ onSelectSubcategory }) => {
   const { id } = useParams();
@@ -32,6 +33,9 @@ const Subcategories = ({ onSelectSubcategory }) => {
             </NavLink>
           ))}
       </div>
+
+        <NavLink to="/category">Back</NavLink>
+        
     </>
   );
 };

@@ -19,6 +19,7 @@ import { useSiteData } from "../context/SiteDataContext";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Subcategories from "./Subcategories";
+import SelectedSiteCard from "./SelectedSiteCard";
 
 // Document styles
 const styles = StyleSheet.create({
@@ -228,22 +229,31 @@ const TodoApp = () => {
     setEditingTaskId(taskId);
   };
 
-  const handleInputChange = (e, taskId) => {
-    const { name, value } = e.target;
-    setFilteredTasks((prevFilteredTasks) =>
-      prevFilteredTasks.map((task) =>
-        task.id === taskId ? { ...task, [name]: value } : task
-      )
-    );
-  };
-
   const handleUpdateTask = (taskId) => {
+    console.log("Updating task with ID:", taskId);
+    console.log("New task values:", newTask);
+  
     setFilteredTasks((prevFilteredTasks) =>
       prevFilteredTasks.map((task) =>
         task.id === taskId ? { ...task, ...newTask } : task
       )
     );
-    setEditingTaskId(null);
+    setEditingTaskId(null); // Reset editingTaskId after updating
+  };
+
+  // const handleInputChange = (e, taskId) => {
+  //   const { name, value } = e.target;
+  //   setFilteredTasks((prevFilteredTasks) =>
+  //     prevFilteredTasks.map((task) =>
+  //       task.id === taskId ? { ...task, [name]: value } : task
+  //     )
+  //   );
+  // };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log("Input change:", name, value);
+    setNewTask({ ...newTask, [name]: value });
   };
 
   const handleCheckboxChange = (taskId) => {
@@ -271,6 +281,7 @@ const TodoApp = () => {
 
   return (
     <Container fluid>
+      <SelectedSiteCard/>
       <MaintenanceHeader
         onPrintReport={handlePrintReport}
         visitDate={visitDate}
